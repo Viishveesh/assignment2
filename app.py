@@ -42,7 +42,7 @@ def create_schedule():
     })
  
     return jsonify({
-        "message": "ZYour schedule got created successfully",
+        "message": "Your schedule got created successfully",
         "schedule_id": str(result.inserted_id)
     }), 201
  
@@ -53,7 +53,7 @@ def get_doctor_schedule(doctor_id):
     schedules = list(schedules_collection.find({"doctor_id": doctor_id}))
  
     if not schedules:
-        return jsonify({"message": "Sorry, you have not aaded your schedule yet."}), 404
+        return jsonify({"message": "Sorry, you have not added your schedule yet."}), 404
  
     result = []
     for s in schedules:
